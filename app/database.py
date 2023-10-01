@@ -19,23 +19,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-
-# import psycopg2
-# from psycopg2.extras import RealDictCursor
-# import time
-# while True:
-#     try:
-#         conn = psycopg2.connect(
-#             host="localhost",
-#             database="fastapi",
-#             user="postgres",
-#             password="cheesecake",
-#             cursor_factory=RealDictCursor,
-#         )
-#         cursor = conn.cursor()
-#         print("DB connection successfully established.")
-#         break
-#     except Exception as error:
-#         print(f"Connecting to DB failed \nError: {error}")
-#         time.sleep(2)
