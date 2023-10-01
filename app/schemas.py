@@ -15,7 +15,7 @@ class UserCreateResponse(BaseModel):
     created_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UserLogin(BaseModel):
@@ -23,25 +23,24 @@ class UserLogin(BaseModel):
     password: str
 
 
-class EventBase(BaseModel):
+class PostBase(BaseModel):
     title: str
-    description: Optional[str] = None
-    duration: float
-    attended: Optional[bool] = True
+    content: str
+    published: bool = True
 
 
-class EventCreate(EventBase):
+class PostCreate(PostBase):
     pass
 
 
-class EventResponse(EventBase):
+class PostResponse(PostBase):
     id: UUID
     created_at: datetime
     owner_id: UUID
     owner: UserCreateResponse
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class Token(BaseModel):
