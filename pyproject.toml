@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "api-exp"
+version = "0.1.0"
+content = ""
+authors = ["ihkap11 <bpakhi97@gmail.com>"]
+readme = "README.md"
+packages = [{include = "api_exp"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+loguru = "^0.7.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
